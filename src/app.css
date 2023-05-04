@@ -1,0 +1,121 @@
+/* Blue Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #1e88e5;
+  --primary-hover: #1976d2;
+  --primary-focus: rgba(30, 136, 229, 0.125);
+  --primary-inverse: #FFF;
+}
+
+/* Blue Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #1e88e5;
+    --primary-hover: #2196f3;
+    --primary-focus: rgba(30, 136, 229, 0.25);
+    --primary-inverse: #FFF;
+  }
+}
+
+/* Blue Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+  --primary: #1e88e5;
+  --primary-hover: #2196f3;
+  --primary-focus: rgba(30, 136, 229, 0.25);
+  --primary-inverse: #FFF;
+}
+
+/* Blue (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+
+/* Grid */
+body>div>main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(95vh - 7rem);
+  padding: 1rem 0;
+}
+
+article {
+  padding: 0;
+  overflow: hidden;
+}
+
+article div {
+  padding: 1rem;
+}
+
+@media (min-width: 576px) {
+  body>div>main {
+    padding: 1.25rem 0;
+  }
+
+  article div {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body>div>main {
+    padding: 1.5rem 0;
+  }
+
+  article div {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body>div>main {
+    padding: 1.75rem 0;
+  }
+
+  article div {
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  body>div>main {
+    padding: 2rem 0;
+  }
+
+  article div {
+    padding: 2rem;
+  }
+}
+
+/* Nav */
+summary[role="link"].secondary:is([aria-current], :hover, :active, :focus) {
+  background-color: transparent;
+  color: var(--secondary-hover);
+}
+
+/* Hero Image */
+article div:nth-of-type(2) {
+  display: none;
+  background-color: #374956;
+  background-image: url("img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 992px) {
+  .grid>div:nth-of-type(2) {
+    display: block;
+  }
+}
+
+/* Footer */
+body>div>footer {
+  padding: 1rem 0;
+}
